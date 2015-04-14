@@ -1,31 +1,29 @@
-<?php
-// John and Mike worked together on the project
+
+<!--John and Mike worked together on the project
 // Collaborated directly on all parts of the document
 // Both gave equal input and worked through the entire project over Skype
-
-
-// Starts a new session in which to store variables
-session_start();
-    echo ('<html>
+-->
+<?php require "sql.php";?>
+<html>
             <Form Name ="gatherDetails" Method ="POST" ACTION = "page2.php">
             Name:<input Type = "Text" name = "fullName"><br><br>
             CWID:<input Type = "Text" name = "CWID"><br><br>
             Residential Life Options
             <select name="Residency">
                 <option value="noSelection"></option>
-                <option value="Leo">Leo Hall</option>
-                <option value="Champ">Champagnat Hall</option>
-                <option value="Marian">Marian Hall</option>
-                <option value="Sheahan">Sheahan Hall</option>
-                <option value="Midrise">Midrise Hall</option>
-                <option value="Foy">Foy Townhouses</option>
-                <option value="Gartland">Gartland Commons</option>
-                <option value="NewTownhouses">New TownHouses</option>
-                <option value="LowerWest">Lower West</option>
-                <option value="UpperWest">Upper West</option>
-                <option value="FultonStreet">Fulton Street</option>
-                <option value="NewFulton">New Fulton</option>
-                <option value="Talmadge">Talmadge</option>
+                <option value="Leo">Leo Hall<?php checkAv("leo");?></option>
+                <option value="Champ">Champagnat Hall<?php checkAv("champ");?></option>
+                <option value="Marian">Marian Hall<?php checkAv("marian");?></option>
+                <option value="Sheahan">Sheahan Hall<?php checkAv("sheahan");?></option>
+                <option value="Midrise">Midrise Hall<?php checkAv("midrise");?></option>
+                <option value="Foy">Foy Townhouses<?php checkAv("foy");?></option>
+                <option value="Gartland">Gartland Commons<?php checkAv("gartland");?></option>
+                <option value="NewTownhouses">New TownHouses<?php checkAv("new");?></option>
+                <option value="LowerWest">Lower West<?php checkAv("lower_west");?></option>
+                <option value="UpperWest">Upper West<?php checkAv("upper_west");?></option>
+                <option value="FultonStreet">Fulton Street<?php checkAv("fulton_street");?></option>
+                <option value="NewFulton">New Fulton<?php checkAv("new_fulton");?></option>
+                <option value="Talmadge">Talmadge<?php checkAv("talmadge");?></option>
             </select><br><br>
             Class:
             <select name="Year">
@@ -42,5 +40,4 @@ session_start();
             <input type="checkbox" name="Kitchen" value="Yes">Kitchen<br>
             <INPUT TYPE = "Submit" Name = "Submit" VALUE = "Submit">
         </Form>
-        </html>');
-?>
+</html>

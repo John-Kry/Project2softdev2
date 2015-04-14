@@ -1,11 +1,26 @@
 <?php
 session_start();
+require "sql.php";
 	// allows the input of name, CWID 
      $_SESSION['fullName'] = $_POST['fullName'];
      $_SESSION['CWID'] = $_POST['CWID'];
      $_SESSION['Residency'] = $_POST['Residency'];
 			// if no selection for housing was chosen iterate down to the next form to move on
            if ($_POST["Residency"]=="noSelection"){
+                echo ("Availability:");
+                echo ('<br>Leo Hall'); checkAv("leo");
+                echo ('<br>Champagnat Hall'); checkAv("champ");
+                echo ('<br>Marian Hall'); checkAv("marian");
+                echo ('<br>Sheahan Hall'); checkAv("sheahan");
+                echo ('<br>Midrise Hall'); checkAv("midrise");
+                echo ('<br>Foy Townhouses'); checkAv("foy");
+                echo ('<br>Gartland Commons'); checkAv("gartland");
+                echo ('<br>New TownHouses'); checkAv("new");
+                echo ('<br>Lower West'); checkAv("lower_west");
+                echo ('<br>Upper West'); checkAv("upper_west");
+                echo ('<br>Fulton Street'); checkAv("fulton_street");
+                echo ('<br>New Fulton'); checkAv("new_fulton");
+                echo ('<br>Talmadge<br>'); checkAv("talmadge");
 				// freshman can not choose a townhouse or kitchen so offer them these options
                if (($_POST["Year"]=="Frosh")&&((isset($_POST["Townhouse"]))||(isset($_POST["Kitchen"])))){
                echo ("There is no configuration that exists for these choices.<br>");
