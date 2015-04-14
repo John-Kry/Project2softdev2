@@ -8,7 +8,8 @@ if ($_SESSION["Residency"] == "noSelection")
     echo ('Name: '. $_SESSION["fullName"].'<br>');
     echo ('CWID: '. $_SESSION["CWID"]. '<br>');
     echo ('Residential Life Selection: '. $_SESSION["Residency"]. '<br>');
-
-    echo ('<button>Confirm</button>');
-    
+    echo ('Confirm your selection!
+            <Form Name ="toConfirm2Page" Method ="POST" ACTION = "page4.php">
+            <INPUT TYPE = "Submit" Name = "Submit3" VALUE = "Submit">
+            </Form>');
 ?>
