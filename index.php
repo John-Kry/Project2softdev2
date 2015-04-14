@@ -16,7 +16,7 @@
                 <option value="Marian">Marian Hall<?php checkAv("marian");?></option>
                 <option value="Sheahan">Sheahan Hall<?php checkAv("sheahan");?></option>
                 <option value="Midrise">Midrise Hall<?php checkAv("midrise");?></option>
-                <option value="Foy">Foy Townhouses<?php checkAv("foy");?></option>
+                <option value="foy">Foy Townhouses<?php checkAv("foy");?></option>
                 <option value="Gartland">Gartland Commons<?php checkAv("gartland");?></option>
                 <option value="NewTownhouses">New TownHouses<?php checkAv("new");?></option>
                 <option value="LowerWest">Lower West<?php checkAv("lower_west");?></option>
