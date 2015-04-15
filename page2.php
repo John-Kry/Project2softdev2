@@ -1,6 +1,8 @@
 <?php
 session_start();
+//Starts a session so we can record their choices and their information accross pages.
 require "sql.php";
+//In order to use the checkAv functions to see the availabiltiy we need access to that function.
 	// allows the input of name, CWID 
      $_SESSION['fullName'] = $_POST['fullName'];
      $_SESSION['CWID'] = $_POST['CWID'];
@@ -54,7 +56,7 @@ require "sql.php";
                     <option value="Midrise">Midrise Hall</option>
                     <option value="Foy">Foy Townhouses</option>
                     <option value="Gartland">Gartland Commons</option>
-                    <option value="NewTownhouses">New TownHouses</option>
+                    <option value="New">New TownHouses</option>
                     </select><br><br>
                     <INPUT TYPE = "Submit" Name = "Submit2" VALUE = "Submit">
                     </Form>');
@@ -65,7 +67,7 @@ require "sql.php";
                     <select name="Residency">
                     <option value="Foy">Foy Townhouses</option>
                     <option value="Gartland">Gartland Commons</option>
-                    <option value="NewTownhouses">New TownHouses</option>
+                    <option value="new">New TownHouses</option>
                     </select><br><br>
                     <INPUT TYPE = "Submit" Name = "Submit2" VALUE = "Submit">
                     </Form>');
@@ -74,10 +76,10 @@ require "sql.php";
                    echo('Here are some options for juniors and seniors:<br>
                     <Form Name ="toConfirmPage" Method ="POST" ACTION = "page3.php">
                     <select name="Residency">
-                    <option value="LowerWest">Lower West</option>
-                    <option value="UpperWest">Upper West</option>
-                    <option value="FultonStreet">Fulton Street</option>
-                    <option value="NewFulton">New Fulton</option>
+                    <option value="Lower_West">Lower West</option>
+                    <option value="Upper_West">Upper West</option>
+                    <option value="Fulton_Street">Fulton Street</option>
+                    <option value="New_Fulton">New Fulton</option>
                     <option value="Talmadge">Talmadge</option>
                     </select><br><br>
                     <INPUT TYPE = "Submit" Name = "Submit2" VALUE = "Submit">
@@ -99,15 +101,15 @@ require "sql.php";
         if ((($_POST["Residency"]=="Midrise")|| 
              ($_POST["Residency"]=="Foy")|| 
              ($_POST["Residency"]=="Gartland")||
-             ($_POST["Residency"]=="NewTownhouses")) && ($_POST["Year"]!=="Soph")){
+             ($_POST["Residency"]=="new")) && ($_POST["Year"]!=="Soph")){
             echo ("Choose a different location, your housing doesn't match your year.<br>");
             $correct = FALSE;
         }
 		// the if statement that allows juniors and seniors to choose only Lower West, Upper West, Fulton, New Fulton, or Talmadge
-        if ((($_POST["Residency"]=="LowerWest")|| 
-             ($_POST["Residency"]=="UpperWest")|| 
-             ($_POST["Residency"]=="FultonStreet")||
-             ($_POST["Residency"]=="NewFulton")||
+        if ((($_POST["Residency"]=="Lower_West")|| 
+             ($_POST["Residency"]=="Upper_West")|| 
+             ($_POST["Residency"]=="Fulton_Street")||
+             ($_POST["Residency"]=="New_Fulton")||
              ($_POST["Residency"]=="Talmadge")) && (($_POST["Year"]!=="Junior")&&($_POST["Year"]!=="Senior"))){
             echo ("Choose a different location, your housing doesn't match your year.<br>");
             $correct = FALSE;

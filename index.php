@@ -1,10 +1,15 @@
 
 <!--John and Mike worked together on the project
-// Collaborated directly on all parts of the document
-// Both gave equal input and worked through the entire project over Skype
+// Collaborated directly on all parts of the document (again)
+// Both gave equal input and worked through the entire project in the library
 -->
-<?php require "sql.php";?>
+<?php require "sql.php";
+//In order to use the checkAv functions to see the availabiltiy we need access to that function.
+?>
+
 <html>
+    <!--Form for the first page to gather details about who the subject is and what their choices are
+-->
             <Form Name ="gatherDetails" Method ="POST" ACTION = "page2.php">
             Name:<input Type = "Text" name = "fullName"><br><br>
             CWID:<input Type = "Text" name = "CWID"><br><br>
@@ -18,11 +23,11 @@
                 <option value="Midrise">Midrise Hall<?php checkAv("midrise");?></option>
                 <option value="foy">Foy Townhouses<?php checkAv("foy");?></option>
                 <option value="Gartland">Gartland Commons<?php checkAv("gartland");?></option>
-                <option value="NewTownhouses">New TownHouses<?php checkAv("new");?></option>
-                <option value="LowerWest">Lower West<?php checkAv("lower_west");?></option>
-                <option value="UpperWest">Upper West<?php checkAv("upper_west");?></option>
-                <option value="FultonStreet">Fulton Street<?php checkAv("fulton_street");?></option>
-                <option value="NewFulton">New Fulton<?php checkAv("new_fulton");?></option>
+                <option value="New">New TownHouses<?php checkAv("new");?></option>
+                <option value="Lower_West">Lower West<?php checkAv("lower_west");?></option>
+                <option value="Upper_West">Upper West<?php checkAv("upper_west");?></option>
+                <option value="Fulton_Street">Fulton Street<?php checkAv("fulton_street");?></option>
+                <option value="New_Fulton">New Fulton<?php checkAv("new_fulton");?></option>
                 <option value="Talmadge">Talmadge<?php checkAv("talmadge");?></option>
             </select><br><br>
             Class:
